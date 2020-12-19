@@ -40,7 +40,17 @@ public class EmployeeController {
 	   logger.info("in get all employees ");
 	   return employeeRepository.findAll();
   }	
-  
+  /* @PostMapping(value="/users")
+            ResponseEntity<?> create( @Valid @RequestBody User user) {
+                
+                User addeduser = userrepo.save(user);
+                URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+                                    .path("/{id}")
+                                    .buildAndExpand(addeduser.getId())
+                                    .toUri();
+                
+                return ResponseEntity.created(location).build();
+            }*/
   @PreAuthorize("hasRole('user')")
   @PostMapping("/")
   public Employee saveEmployee( @RequestBody Employee employee) {

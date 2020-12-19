@@ -29,7 +29,12 @@ import com.example.ahmed.model.SimpleDto;
 @CrossOrigin("*")
 @RequestMapping("/dtos")
 public class DtoController {
-  
+  /*   pagination
+   * 
+   * 
+   * 
+   * 
+   * */
 	 @Autowired
 	 DtoRepository dtoRepository;
 	 

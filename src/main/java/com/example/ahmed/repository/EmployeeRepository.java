@@ -7,5 +7,19 @@ import com.example.ahmed.model.Employee;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee,Long> {
-
+/*
+  @EntityGraph(
+    type = EntityGraphType.FETCH,
+    attributePaths = {
+      "language",
+      "filmActors",
+      "filmActors.actor"
+    }
+  )
+  */
+	/*
+  Page<Film> findAll(Pageable pageable);
+ * 
+ * 
+ * */
 }

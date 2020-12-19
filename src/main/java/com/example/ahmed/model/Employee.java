@@ -1,15 +1,40 @@
 package com.example.ahmed.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+/*   {thorben-janssen good name in jpa and hibernate }       {many to many association bitween employees and  my dtos }
+ *     Employee-ID= id ,  SimpleDto-ID= id  
+ *     make  third relation  Employee_Dto  which has (int payment)
+ *   
+ *   mdel associations as  util.set  
+ *     use lazy fetch type 
+ *     Apply query specific fetching 
+ *   
+ *    @ManyToMany(mappedBy = "authors")
+    private Set<Book> books = new HashSet<Book>();
+ 
+    ...
+     
+    public void addBook(Book book) {
+        this.books.add(book);
+        book.getAuthors().add(this);
+    }
+ 
+    public void removeBook(Book book) {
+        this.books.remove(book);
+        book.getAuthors().remove(this);
+    }
+    
+ * */
 @Entity
 @Table(name="employees")
-public class Employee {
+public class Employee implements Serializable{
 @Id
 @GeneratedValue(strategy=GenerationType.IDENTITY)
 private long id;
